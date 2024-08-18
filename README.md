@@ -1,2 +1,2 @@
 # finance
-herbiko sa medom
+Zravko herbiko!
