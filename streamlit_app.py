@@ -95,9 +95,9 @@ def load_json_from_github(url):
 company_urls = {
     'Ford': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Ford.json',
     'GM': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/GM.json',
-    # Add additional companies here
-    'Tesla': 'https://raw.githubusercontent.com/yourusername/finance/main/Tesla.json',
-    'Lucid': 'https://raw.githubusercontent.com/yourusername/finance/main/Lucid.json',
+    # Add additional companies here if needed
+    'Tesla': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Tesla.json',
+    'Lucid': 'https://raw.githubusercontent.com/thebnbrkt/finance/main/Lucid.json',
 }
 
 # Function to extract US GAAP values and descriptions
@@ -130,11 +130,17 @@ def align_dates(data_list):
     
     for company, data in data_list.items():
         df = pd.DataFrame(data)
-        df['end'] = pd.to_datetime(df['end'])
+        if 'end' in df.columns:
+            df['end'] = pd.to_datetime(df['end'])
+        else:
+            continue  # Skip if there are no 'end' dates
+        df = df[['end', 'val']]  # Keep only the 'end' and 'val' columns
+        df = df.rename(columns={'val': company})  # Rename the 'val' column to company name
+        
         if merged_df.empty:
             merged_df = df
         else:
-            merged_df = pd.merge(merged_df, df, on='end', suffixes=(False, f'_{company}'), how='inner')
+            merged_df = pd.merge(merged_df, df, on='end', how='inner')
     
     return merged_df
 
@@ -174,7 +180,7 @@ if len(selected_companies) > 0:
             st.write(f"Comparison of {selected_metric}")
             fig, ax = plt.subplots()
             for company in selected_companies:
-                ax.plot(merged_data['end'], merged_data[f'val_{company}'], label=company)
+                ax.plot(merged_data['end'], merged_data[company], label=company)
             ax.set_xlabel('Date')
             ax.set_ylabel('Value (USD)')
             ax.legend()
