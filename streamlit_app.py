@@ -104,7 +104,7 @@ company_urls = {
     'Pheonix_Motor': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Pheonix_Motor.json',
     'Cenntro': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Cenntro.json',
     'Canoo': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Canoo.json',
-    'Arcimoto': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Arcimoto.json
+    'Arcimoto': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Arcimoto.json'
 }
 
 
