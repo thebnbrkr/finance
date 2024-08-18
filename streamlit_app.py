@@ -97,7 +97,7 @@ company_urls = {
     'GM': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/GM.json',
     # Add additional companies here if needed
     'Tesla': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Tesla.json',
-    'Lucid': 'https://raw.githubusercontent.com/thebnbrkt/finance/main/Lucid.json',
+    'Lucid': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Lucid.json',
 }
 
 # Function to extract US GAAP values and descriptions
