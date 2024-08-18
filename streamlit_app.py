@@ -153,7 +153,8 @@ def align_dates(data_list):
     return merged_df
 
 # App title
-st.title("Car Companies US GAAP Metrics Comparison")
+st.title("🚗 Car Companies US GAAP Metrics Comparison 🚗")
+st.title("💨 Ist es schnell??? 💨")
 
 # Select companies to compare (up to 4)
 companies = list(company_urls.keys())
