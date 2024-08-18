@@ -95,10 +95,18 @@ def load_json_from_github(url):
 company_urls = {
     'Ford': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Ford.json',
     'GM': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/GM.json',
-    # Add additional companies here if needed
     'Tesla': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Tesla.json',
     'Lucid': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Lucid.json',
+    'Mullen Automotive': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Mullen_Automotive.json',
+    'Rivian': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Rivian.json',
+    'Nikola': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Nikola.json',
+    'Polaris': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Polaris.json',
+    'Pheonix_Motor': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Pheonix_Motor.json',
+    'Cenntro': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Cenntro.json',
+    'Canoo': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Canoo.json',
+    'Arcimoto': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Arcimoto.json
 }
+
 
 # Function to extract US GAAP values and descriptions
 def extract_us_gaap_values(data):
