@@ -69,7 +69,7 @@ if selected_metric:
         merged_data = align_dates(ford_vals, gm_vals)
         
         if not merged_data.empty:
-            st.write(f"Comparison of {selected_metric}")
+            #st.write(f"Comparison of {selected_metric}")
             fig, ax = plt.subplots()
             ax.plot(merged_data['end'], merged_data['val_ford'], label='Ford')
             ax.plot(merged_data['end'], merged_data['val_gm'], label='GM')
