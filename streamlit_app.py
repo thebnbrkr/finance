@@ -121,7 +121,6 @@ else:
     st.write("Please select at least one company.")
 
 """
-
 import streamlit as st
 import requests
 import json
@@ -148,7 +147,6 @@ company_urls = {
     'Canoo': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Canoo.json',
     'Arcimoto': 'https://raw.githubusercontent.com/thebnbrkr/finance/main/Arcimoto.json'
 }
-
 
 # Function to extract US GAAP values and descriptions
 def extract_us_gaap_values(data):
@@ -214,8 +212,8 @@ if len(selected_companies) > 0:
         metrics = list(common_us_gaap_keys)
         selected_metric = st.selectbox("Select a metric to compare", metrics)
 
-        # Ask the user to choose the chart type (Line vs Bar)
-        chart_type = st.selectbox("Choose how you want to display the comparison:", ["Line Chart", "Bar Chart"])
+        # Ask the user to choose the chart type (Line vs Area)
+        chart_type = st.selectbox("Choose how you want to display the comparison:", ["Line Chart", "Area Chart"])
         
         # Show the description of the selected metric
         description = company_descriptions[selected_companies[0]].get(selected_metric, 'No description available')
@@ -236,8 +234,8 @@ if len(selected_companies) > 0:
             for company in selected_companies:
                 if chart_type == "Line Chart":
                     ax.plot(merged_data['end'], merged_data[company], label=company)
-                elif chart_type == "Bar Chart":
-                    ax.bar(merged_data['end'], merged_data[company], label=company)
+                elif chart_type == "Area Chart":
+                    ax.fill_between(merged_data['end'], merged_data[company], label=company, alpha=0.4)
 
             ax.set_xlabel('Date')
             ax.set_ylabel('Value (USD)')
@@ -248,4 +246,3 @@ if len(selected_companies) > 0:
         st.write("No common US GAAP metrics found across the selected companies.")
 else:
     st.write("Please select at least one company.")
-
